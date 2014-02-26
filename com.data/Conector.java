@@ -53,7 +53,7 @@ public void desconectar() {
 /* agregar un cliente */
 public int addCliente(String tpo_DNI, int nro_DNI,
 		String apellido, String nombre, String direccion, String telefono,
-		String mail, String usuario, String contraseña) throws Exception {
+		String mail, String usuario, String contrasena) throws Exception {
 
 	int claveGenerada = 0;
 	try {
@@ -71,7 +71,7 @@ public int addCliente(String tpo_DNI, int nro_DNI,
 		ps.setString(6, telefono);
 		if (mail == "") {ps.setString(7, null);} else {ps.setString(7, mail);}
 		ps.setString(8,usuario);
-		ps.setString(9,contraseña);
+		ps.setString(9,contrasena);
 		ps.executeUpdate();
 		/* Se obtiene la clave generada */
 		ResultSet rs = ps.getGeneratedKeys();
